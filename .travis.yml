@@ -14,9 +14,9 @@ before_install:
 
 install:
   - ./travis-tool.sh install_deps
-  - ./travis-tool.sh r-binary-packages dplyr
-  - ./travis-tool.sh r-binary-packages ggplot2
-  - ./travis-tool.sh r-binary-packages rmarkdown
+  - ./travis-tool.sh r_binary_packages dplyr
+  - ./travis-tool.sh r_binary_packages ggplot2
+  - ./travis-tool.sh r_binary_packages rmarkdown
 
 script:
   - make
