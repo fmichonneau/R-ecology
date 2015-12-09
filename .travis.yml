@@ -16,6 +16,7 @@ before_install:
 
 install:
   - ./travis-tool.sh install
+  - ./travis-tool.sh r_binary_packages knitr
   - ./travis-tool.sh r_binary_packages dplyr
   - ./travis-tool.sh r_binary_packages ggplot2
   - ./travis-tool.sh r_binary_packages rmarkdown
