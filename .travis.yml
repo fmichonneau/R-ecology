@@ -1,20 +1,11 @@
 # Sample .travis.yml for R projects
 
-language: c
+language: r
 sudo: required
 
 env:
   global:
    - secure: "Ha9NmkMT0qV/j5LKvAnkAGDsSrIZFudaIMIJNd0xy2lePOH89lna5OTU1PnNnaayeMmaarwr5/Cz4WE8ZycGFKJxoErQEfQ2/UvNY+X+wPH1mXUj0XsyBNklE55j2Y5Co6jssFy7sxWEX4fx5cWASu4tSUfmoDUHudBRQ0DkQbo="
-
-before_install:
-  - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
-  - chmod 755 ./travis-tool.sh
-  - ./travis-tool.sh boostrap
-
-install:
-  - ./travis-tool.sh r_install dplyr ggplot2 rmarkdown
-  - make
 
 after_success:
   - cat handout-script.R
