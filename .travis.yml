@@ -10,8 +10,8 @@ env:
 before_install:
   - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
   - chmod 755 ./travis-tool.sh
-  - BOOTSTRAP_PANDOC=1
-  - BOOTSTRAP_LATEX=1
+  - BOOTSTRAP_PANDOC="1"
+  - BOOTSTRAP_LATEX="1"
   - ./travis-tool.sh bootstrap
 
 install:
@@ -21,9 +21,9 @@ install:
   - ./travis-tool.sh r_binary_packages rmarkdown
 
 script:
-  - PATH="${PATH}:/home/travis/opt"
+  - PATH="${PATH}:/home/travis/opt/pandoc"
   - echo $PATH
-  - ls /home/travis/opt
+  - ls /home/travis/opt/pandoc
   - which pandoc
   - make
 
