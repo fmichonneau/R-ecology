@@ -11,10 +11,10 @@ before_install:
   - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
   - chmod 755 ./travis-tool.sh
   - ./travis-tool.sh boostrap
-  - ./travis-tool.sh r_binary_install dplyr ggplot2 rmarkdown
+  - ./travis-tool.sh r_install dplyr ggplot2 rmarkdown
 
 install:
   - make
 
 after_success:
-  - cat 
+  - cat handout-script.R
