@@ -11,7 +11,6 @@ before_install:
   - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
   - chmod 755 ./travis-tool.sh
   - export BOOTSTRAP_PANDOC=1
-  - export BOOTSTRAP_LATEX=1
   - ./travis-tool.sh bootstrap
 
 install:
@@ -22,6 +21,8 @@ script:
   - make
 
 after_success:
+  - git config user.name "fmichonneau-travis"
+  - git config user.email "travis"
   - git commit -m "update html pages"
   - git push origin gh-pages
   - cat handout-script.R
