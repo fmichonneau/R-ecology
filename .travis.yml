@@ -3,10 +3,6 @@
 language: c
 sudo: required
 
-script:
-  - make
-
-
 env:
   global:
    - secure: "Ha9NmkMT0qV/j5LKvAnkAGDsSrIZFudaIMIJNd0xy2lePOH89lna5OTU1PnNnaayeMmaarwr5/Cz4WE8ZycGFKJxoErQEfQ2/UvNY+X+wPH1mXUj0XsyBNklE55j2Y5Co6jssFy7sxWEX4fx5cWASu4tSUfmoDUHudBRQ0DkQbo="
@@ -17,10 +13,13 @@ before_install:
   - ./travis-tool.sh boostrap
 
 install:
+  - ./travis-tool.sh install_deps
   - ./travis-tool.sh r-binary-packages dplyr
   - ./travis-tool.sh r-binary-packages ggplot2
   - ./travis-tool.sh r-binary-packages rmarkdown
 
+script:
+  - make
 
 after_success:
   - cat handout-script.R
