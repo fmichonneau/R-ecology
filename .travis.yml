@@ -18,9 +18,9 @@ install:
   - ./travis-tool.sh r_binary_packages rmarkdown
 
 script:
-  - PATH="${PATH}:/home/travis/opt/pandoc"
+  - PATH="${PATH}:/home/travis/opt"
   - echo $PATH
-  - ls /home/travis/opt/pandoc
+  - ls /home/travis/opt
   - which pandoc
   - make
 
