@@ -2,8 +2,9 @@
 
 language: c
 
-env: global:
- - secure: "Ha9NmkMT0qV/j5LKvAnkAGDsSrIZFudaIMIJNd0xy2lePOH89lna5OTU1PnNnaayeMmaarwr5/Cz4WE8ZycGFKJxoErQEfQ2/UvNY+X+wPH1mXUj0XsyBNklE55j2Y5Co6jssFy7sxWEX4fx5cWASu4tSUfmoDUHudBRQ0DkQbo="
+env:
+  global:
+   - secure: "Ha9NmkMT0qV/j5LKvAnkAGDsSrIZFudaIMIJNd0xy2lePOH89lna5OTU1PnNnaayeMmaarwr5/Cz4WE8ZycGFKJxoErQEfQ2/UvNY+X+wPH1mXUj0XsyBNklE55j2Y5Co6jssFy7sxWEX4fx5cWASu4tSUfmoDUHudBRQ0DkQbo="
 
 before_install:
   - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
@@ -14,6 +15,5 @@ before_install:
 install:
   - make
 
-
-
-
+after_success:
+  - cat 
