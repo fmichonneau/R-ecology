@@ -30,7 +30,7 @@ after_success:
   - ls
   - ls .git
   - git status
-  - git pull ${FULL_REPO} gh-pages
+  - git checkout gh-pages
   - git status
   - git add *.html
   - git commit -m "update html pages"
