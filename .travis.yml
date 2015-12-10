@@ -29,10 +29,7 @@ after_success:
   - git config user.email "francois.michonneau@gmail.com"
   - ls
   - ls .git
-  - git status
-  - git checkout gh-pages
-  - git status
   - git add *.html
   - git commit -m "update html pages"
-  - git push ${FULL_REPO} HEAD:gh-pages
+  - git push --force ${FULL_REPO} HEAD:gh-pages
   - cat handout-script.R
