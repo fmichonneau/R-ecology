@@ -26,8 +26,6 @@ after_success:
   - echo ${FULL_REPO}
   - git config user.name "fmichonneau"
   - git config user.email "francois.michonneau@gmail.com"
-  - pwd
-  - cd /home/travis/build/fmichonneau/R-ecology
   - ls
   - ls .git
   - git status
