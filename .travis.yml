@@ -24,16 +24,15 @@ script:
 after_success:
   - export GH_REPO="@github.com/fmichonneau/R-ecology.git"
   - export FULL_REPO="https://${GH_TOKEN}${GH_REPO}"
-  - export APP_DIR="/home/travis/fmichonneau/app_dir/R-ecology"
+  - export APP_DIR="/home/travis/build/fmichonneau/app_dir/R-ecology"
   - echo ${FULL_REPO}
-  - git config user.name "fmichonneau"
-  - git config user.email "francois.michonneau@gmail.com"
   - mkdir -p ${APP_DIR}
   - git clone ${FULL_REPO} ${APP_DIR}
+  - git config user.name "fmichonneau"
+  - git config user.email "francois.michonneau@gmail.com"
   - cd ${APP_DIR}
   - git checkout gh-pages
-  - cp /home/travis/fmichonneau/R-ecology/*.html ${APP_DIR}
+  - cp /home/travis/build/fmichonneau/R-ecology/*.html ${APP_DIR}
   - git add *.html
   - git commit -m "update html pages"
   - git push ${FULL_REPO} HEAD:gh-pages
-  - cat handout-script.R
