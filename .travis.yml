@@ -15,7 +15,7 @@ before_install:
 
 install:
   - ./travis-tool.sh install
-  - ./travis-tool.sh r_binary_install knitr dplyr ggplot2 rmarkdown
+  - ./travis-tool.sh r_binary_install knitr dplyr ggplot2 rmarkdown RSQLite
 
 script:
   - make clean
