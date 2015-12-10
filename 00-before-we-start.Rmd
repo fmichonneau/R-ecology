@@ -23,7 +23,7 @@ knitr::opts_chunk$set(results='hide', fig.path='img/r-lesson-')
 
 # Before we get started
 
-* Does it work?
+* Does it work? test test
 * Start RStudio (presentation of RStudio -below- should happen here)
 * Under the `File` menu, click on `New project`, choose `New directory`, then
   `Empty project`
