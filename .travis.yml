@@ -21,9 +21,9 @@ script:
   - make
 
 after_success:
-  - git config user.name "fmichonneau-travis"
-  - git config user.email "travis"
-  - cd fmichonneau/R-ecology
+  - git config user.name "fmichonneau"
+  - git config user.email "francois.michonneau@gmail.com"
+  - cd build/fmichonneau/R-ecology
   - git status
   - git add *.html
   - git commit -m "update html pages"
