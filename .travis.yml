@@ -34,5 +34,6 @@ after_success:
   - git checkout gh-pages
   - cp /home/travis/build/fmichonneau/R-ecology/*.html ${APP_DIR}
   - git add *.html
-  - git commit -m "update html pages"
+  - git add handout-script.R
+  - git commit -m "[travis] update html pages + handout"
   - git push ${FULL_REPO} HEAD:gh-pages
