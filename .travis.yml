@@ -25,6 +25,8 @@ after_success:
   - git config user.email "francois.michonneau@gmail.com"
   - pwd
   - cd /home/travis/build/fmichonneau/R-ecology
+  - ls
+  - ls .git
   - git status
   - git add *.html
   - git commit -m "update html pages"
