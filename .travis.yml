@@ -28,9 +28,9 @@ after_success:
   - echo ${FULL_REPO}
   - mkdir -p ${APP_DIR}
   - git clone ${FULL_REPO} ${APP_DIR}
+  - cd ${APP_DIR}
   - git config user.name "fmichonneau"
   - git config user.email "francois.michonneau@gmail.com"
-  - cd ${APP_DIR}
   - git checkout gh-pages
   - cp /home/travis/build/fmichonneau/R-ecology/*.html ${APP_DIR}
   - git add *.html
