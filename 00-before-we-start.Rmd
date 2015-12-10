@@ -13,6 +13,7 @@ knitr::opts_chunk$set(results='hide', fig.path='img/r-lesson-')
 
 > ## Learning Objectives
 >
+> * test test
 > * Articulating motivations for this lesson
 > * Introduce participants to the RStudio interface
 > * Set up participants to have a working directory with a `data/` folder inside
@@ -23,7 +24,6 @@ knitr::opts_chunk$set(results='hide', fig.path='img/r-lesson-')
 
 # Before we get started
 
-* Does it work? test test
 * Start RStudio (presentation of RStudio -below- should happen here)
 * Under the `File` menu, click on `New project`, choose `New directory`, then
   `Empty project`
