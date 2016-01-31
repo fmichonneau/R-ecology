@@ -7,12 +7,12 @@ maintainers: [""]
 domain: Ecology
 topic: R for data analysis
 software: R
-dataurl:
+dataurl: http://dx.doi.org/10.6084/m9.figshare.1314459
 status: Teaching
 ---
 
 #Data Carpentry {{ page.topic }} for {{ page.domain }}
-=======
+
 
 Data Carpentry's aim is to teach researchers basic concepts, skills,
 and tools for working with data so that they can get more done in less
@@ -54,8 +54,10 @@ for each level and a very brief introduction to plotting.
 
 ## Data
 
-Data files for the lesson are available here: ({{page.dataurl %}})[{{page.dataurl %}}]
+Data files for the lesson are available here: 
+[{{page.dataurl %}}]({{page.dataurl %}})
 
+Please download the *\*.csv* (Comma Separated Value) files: *species.csv*, *plots.csv*, *surveys.csv*, and *combined.csv*.
 
 ### Requirements
 

@@ -48,13 +48,9 @@ single animal, and the columns represent:
 
 We are going to use the R function `download.file()` to download the CSV file
 that contains the survey data from figshare, and we will use `read.csv()` to
-load into memory (as a `data.frame`) the content of the CSV file:
+load into memory (as a `data.frame`) the content of the CSV file.
 
-- First, make sure you are in the correct working directory by typing `getwd()`.
-- Second, create a new directory within this working directory called `data`. You
-can do this by clicking on the new folder icon in RStudio under the file tab, or
-by typing `dir.create("data")` at the terminal.
-- Third, download the data:
+To download the data into the `data/` subdirectory, do:
 
 ```{r, eval=FALSE, purl=TRUE}
 download.file("http://files.figshare.com/2236372/combined.csv",
@@ -86,7 +82,8 @@ function `head()`:
 head(surveys)
 ```
 
-Let's now check the __str__ucture of this `data.frame` in more details with the
+An important feature of a `data.frame`is that each column is a vector, with the same type of data.
+We can see this when inspecting the __str__ucture of a `data.frame` with the
 function `str()`:
 
 ```{r, purl=FALSE}
@@ -111,10 +108,9 @@ Based on the output of `str(surveys)`, can you answer the following questions?
 
 ```
 
-As you can see, the columns `species` and `sex` are of a special class called
-`factor`. Before we learn more about the `data.frame` class, we are going to
-talk about factors. They are very useful but not necessarily intuitive, and
-therefore require some attention.
+As you can see, many of the columns consist of integers, however, the columns `species` and `sex` are of a special class called a `factor`. 
+Before we learn more about the `data.frame` class, we are going to talk about factors. 
+They are very useful but not necessarily intuitive, and therefore require some attention.
 
 
 ## Factors
@@ -177,7 +173,7 @@ information built in. It is particularly helpful when there are many levels
 If you need to convert a factor to a character vector, simply use
 `as.character(x)`.
 
-Converting a factor to a numeric vector is however a little trickier, and you
+Converting a factors where the levels appear as numbers (such as in concentration levels) to a numeric vector is however a little trickier, and you
 have to go via a character vector. Compare:
 
 ```{r, purl=TRUE}
@@ -187,21 +183,26 @@ as.numeric(as.character(f)) ## works...
 as.numeric(levels(f))[f]    ## The recommended way.
 ```
 
+Notice that in this last approach, three important steps have happened  
+* We have obtained the factor levels using `levels(f)`  
+* We have converted these levels to numeric values using `as.numeric(levels(f))`  
+* We have then accessed these numeric values using the underlying integers of the vector `f` inside the square brackets  
+
 ### Challenge
 
 The function `table()` tabulates observations and can be used to create
 bar plots quickly. For instance:
 
 ```{r wrong-order, results='show', purl=TRUE}
-## Challenge
-
-## How can you recreate this plot but by having "control" being listed
-##last instead of first?
 exprmt <- factor(c("treat1", "treat2", "treat1", "treat3", "treat1", "control",
                    "treat1", "treat2", "treat3"))
 table(exprmt)
 barplot(table(exprmt))
 ```
+gives you a barplot of the number of observations.
+
+How can you recreate this plot with "control" listed
+last instead of first?
 
 <!---
 ```{r correct-order, purl=FALSE}

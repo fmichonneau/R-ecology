@@ -112,7 +112,7 @@ fix them? Don't hesitate to experiment!
      Why? Why not? 
 
      R coerces (when possible) to the data type that is the least common
-     denominator and the easiest to coerce to.
+     denominator and is the easiest to coerce to.
 
 
 # Inspecting `data.frame` objects
@@ -182,6 +182,7 @@ extract some specific data from it, we need to specify the "coordinates" we want
 from it. Row numbers come first, followed by column numbers.
 
 ```{r, purl=FALSE}
+surveys[1]      # first row in the data frame
 surveys[1, 1]   # first element in the first column of the data frame
 surveys[1, 6]   # first element in the 6th column
 surveys[1:3, 7] # first three elements in the 7th column
@@ -189,6 +190,21 @@ surveys[3, ]    # the 3rd element for all columns
 surveys[, 8]    # the entire 8th column
 head_surveys <- surveys[1:6, ] # surveys[1:6, ] is equivalent to head(surveys)
 ```
+
+### A Special Feature of Data Frames
+As well as using numeric values to subset a `data.frame` (or `matrix`), columns can be called by name.
+```{r, eval = FALSE, purl=FALSE}
+surveys[,"species_id"]
+```
+
+The `data.frame` object was originally created to store statistical variables, so it treats each column in this way.
+We could also extract a single column using a `$` symbol after the object name.
+The auto-complete feature of RStudio is also very helpful here.
+This will give that single column of the `data.frame` as a vector.
+```{r, eval=FALSE, purl=FALSE}
+surveys$species_id
+```
+
 
 ### Challenge
 
